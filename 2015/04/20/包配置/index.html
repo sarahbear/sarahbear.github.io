@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>包配置 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="搬运自慕课网玩转KISSY框架
+包是 Kissy 中很重要的概念，回顾下上一节的代码：
+1234567891011KISSY.config(&amp;#123;    packages: [        &amp;#123;            name: &apos;bee-demo&apos;,            base: &apos;../build&apos;,            ignorePackageNameInUri: t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="包配置">
+<meta property="og:url" content="http://yoursite.com/2015/04/20/包配置/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="搬运自慕课网玩转KISSY框架
+包是 Kissy 中很重要的概念，回顾下上一节的代码：
+1234567891011KISSY.config(&amp;#123;    packages: [        &amp;#123;            name: &apos;bee-demo&apos;,            base: &apos;../build&apos;,            ignorePackageNameInUri: t">
+<meta property="og:updated_time" content="2015-04-20T01:30:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="包配置">
+<meta name="twitter:description" content="搬运自慕课网玩转KISSY框架
+包是 Kissy 中很重要的概念，回顾下上一节的代码：
+1234567891011KISSY.config(&amp;#123;    packages: [        &amp;#123;            name: &apos;bee-demo&apos;,            base: &apos;../build&apos;,            ignorePackageNameInUri: t">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-包配置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/20/包配置/" class="article-date">
+  <time datetime="2015-04-20T01:24:45.000Z" itemprop="datePublished">2015-04-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/kissy/">kissy</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      包配置
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>搬运自慕课网<a href="http://www.imooc.com/learn/191" target="_blank" rel="external">玩转KISSY框架</a></p>
+<p>包是 Kissy 中很重要的概念，回顾下上一节的代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">KISSY</span><span class="class">.config</span>(<span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">packages</span>:<span class="value"> [</span><br><span class="line">        &#123;</span><br><span class="line">            name: <span class="string">'bee-demo'</span>,</span><br><span class="line">            base: <span class="string">'../build'</span>,</span><br><span class="line">            ignorePackageNameInUri: true,</span><br><span class="line">            debug: true,</span><br><span class="line">            combine:false</span><br><span class="line">        </span></span></span>&#125;</span><br><span class="line">    ]&#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>我所理解的包是对模块路径引用地址的定义，比如我的业务模块名是 bee-demo/index，那么该模块的加载地址是什么呢？</p>
+<p>Kissy 默认加载的 <a href="http://g.tbcdn.cn/kissy/k/1.4.8/bee-demo/index-min.js" target="_blank" rel="external">http://g.tbcdn.cn/kissy/k/1.4.8/bee-demo/index-min.js</a> 不符合我们的预期，我们希望 Kissy 加载 bee-demo工程下build目录文件。</p>
+<p>PS:build目录为 gukp-kmc 编译源码模块文件存放的地方。</p>
+<p>所以我们需要配置包，核心目的是配置 base 目录路径，将模块名称中的 bee-demo 映射到我们工程的 build 目录，这样 Kissy.use(‘bee-demo/index’) 时就会自动找到 bee-demo/build/index-min.js 文件。</p>
+<p>###包配置参数说明</p>
+<p>packages 为一个数组，即 Kissy 支持同时配置多个包，一个object即一个包配置，所有参数含义可以看<a href="http://docs.kissyui.com/1.4/docs/html/api/loader/config.html" target="_blank" rel="external">官网文档</a>，这里重点讲解几个参数：</p>
+<p>name 包名，即模块名称路径起始，比如 bee-demo/index 中的 bee-demo</p>
+<p>base 包所在的 url 路径, 如果是相对路径，就是相对于当前页面路径，Kissy会把模块名称拼接到 base 路径后</p>
+<p>回顾下我们的目录结构：</p>
+<p>我们在dev_index.html中配置 base: ‘../build’ ,Kissy会把模块名称拼接到路径中，假设本地服务器地址是 <a href="http://localhost:63342/,最终请求的路径会是" target="_blank" rel="external">http://localhost:63342/,最终请求的路径会是</a> <a href="http://localhost:63342/bee-demo/build/bee-demo/index-min.js" target="_blank" rel="external">http://localhost:63342/bee-demo/build/bee-demo/index-min.js</a> 。</p>
+<p>很明显这个路径是错的，build里面没有 bee-demo目录，这个设计非常坑，kissy1.2.0的代码都被逼得在发布目录加一层包名目录。</p>
+<p>那么如何解决这个问题呢？</p>
+<p>ignorePackageNameInUri:true 可以在请求的模块路径中省去包名！就可以解决上述问题。</p>
+<p>combine 配置，会在后面专门用一节内容讲解。</p>
+<p>debug 开启包调试，默认Kissy加载的是*-min.js文件（即压缩后的文件），debug设置为true，可以让Kissy加载*.js源码文件，后面讲到调试时再深入探讨。</p>
+<p>留意：包名不一定只能是物理目录名，也是可以配置路径的，举个场景，我们bee-demo工程发布上线后带有版本号1.0.0，调用模块的代码会是:</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">KISSY.<span class="keyword">use</span>(<span class="string">'bee-demo/1.0.0/index'</span>);</span><br></pre></td></tr></table></figure>
+<p>但是我们的工程又没有1.0.0这样的物理目录，那包应该如何配置名称，才能保证我们在开发环境中正确的包指向呢？</p>
+<p>其实很简单，只要配置 name:’bee-demo/1.0.0’ ，配合包名忽略参数 ignorePackageNameInUri:true ，即可搞定。 </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/20/包配置/" data-id="cigso3a8h000eebs6ujbvrqou" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/kissy/">kissy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块/">模块</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/04/20/加载模块css文件/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          加载模块css文件
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/04/18/Kissy模块规范/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Kissy模块规范</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/kissy/">kissy</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mac/">mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/test/">test</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yosemite/">Yosemite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kissy/">kissy</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图标/">图标</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模块/">模块</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域/">跨域</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Yosemite/" style="font-size: 10px;">Yosemite</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/kissy/" style="font-size: 20px;">kissy</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/图标/" style="font-size: 10px;">图标</a> <a href="/tags/模块/" style="font-size: 16.67px;">模块</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">11</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/10/23/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/12/kissy最佳实践/">kissy最佳实践</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/03/event对象的clientX-offsetX-screenX-pageX区别/">event对象的clientX,offsetX,screenX,pageX区别</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/03/XMLHttpRequest-cannot-load-file-问题及解决/">XMLHttpRequest cannot load file 问题及解决</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/21/yosemite更改finder图标/">yosemite更改finder图标~</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

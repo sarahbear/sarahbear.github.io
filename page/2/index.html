@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-KISSY整体架构" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/17/KISSY整体架构/" class="article-date">
+  <time datetime="2015-04-17T08:01:08.000Z" itemprop="datePublished">2015-04-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/kissy/">kissy</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/17/KISSY整体架构/">KISSY整体架构</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>搬运自慕课网<a href="http://www.imooc.com/learn/191">玩转KISSY框架</a></p>
+<p>##KISSY 整体架构<br>Kissy是由三个部分组成的：Seed、Core、Components。</p>
+<p>###Seed</p>
+<p>Seed是种子，即上一节的seed-min.js，Seed的核心是Loader（即模块加载器），所有的功能模块或Ui组件都是在Seed上开花结果，早期的Loader遵循的是自创的KMD规范，现在遵循的是<a href="https://github.com/seajs/seajs/issues/242">CMD规范</a> ，但在API上又有些差异，比如Kissy模块定义方法不叫 define ，模块定义方法包裹是比较讨厌的地方，看着不爽，后面明河会介绍写出来的代码如何近似于 NodeJs 模块代码风格。<br>
+        
+          <p class="article-more-link">
+            <a href="/2015/04/17/KISSY整体架构/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/17/KISSY整体架构/" data-id="cigso3a7g0000ebs6kj9aktq5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/kissy/">kissy</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-动手玩kissy" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/16/动手玩kissy/" class="article-date">
+  <time datetime="2015-04-16T06:28:01.000Z" itemprop="datePublished">2015-04-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/kissy/">kissy</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/16/动手玩kissy/">动手玩kissy</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>搬运自慕课网<a href="http://www.imooc.com/learn/191">玩转KISSY框架</a></p>
+<h3 id="动手玩kissy">动手玩kissy</h3><p>引用kissy种子文件</p>
+<p>截止目前，kissy的最新版本是1.4.8，推荐使用该版本。<br><code>&lt;script src=&quot;//g.alicdn.com/kissy/k/1.4.8/seed-min.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</code></p>
+<p>seed.js，kissy的种子文件,包含了最关键的模块加载器,会引入全局对象KISSY（这是kissy唯一注入的全局变量，不推荐添加额外的全局变量，万不得已可以挂载在KISSY对象下）。<br>
+        
+          <p class="article-more-link">
+            <a href="/2015/04/16/动手玩kissy/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/16/动手玩kissy/" data-id="cigso3a8k000iebs6l07d693x" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/kissy/">kissy</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-使用jacman主题在github上搭建hexo博客-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/13/使用jacman主题在github上搭建hexo博客-2/" class="article-date">
+  <time datetime="2015-04-13T04:52:32.000Z" itemprop="datePublished">2015-04-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/13/使用jacman主题在github上搭建hexo博客-2/">使用jacman主题在github上搭建hexo博客(2)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##写文章</p>
+<p>###new<br>执行new命令，生成指定名称的文章至hexo\source_posts\title。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure></p>
+<p>其中layout是可选参数，默认值为post。<br>如果文件名有空格，要用引号包起来~~<br>
+        
+          <p class="article-more-link">
+            <a href="/2015/04/13/使用jacman主题在github上搭建hexo博客-2/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/13/使用jacman主题在github上搭建hexo博客-2/" data-id="cigso3a8s000sebs638rpi2dk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-使用jacman主题搭建hexo博客" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/12/使用jacman主题搭建hexo博客/" class="article-date">
+  <time datetime="2015-04-12T12:49:42.000Z" itemprop="datePublished">2015-04-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/12/使用jacman主题搭建hexo博客/">使用jacman主题在github上搭建hexo博客(1)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我的第一篇Markdown写的博客~咩哈哈。。。</p>
+<p>##环境准备</p>
+<p>###github上新建github.io<br>注册Github账号，创建项目</p>
+<blockquote>
+<p>打开Github官方网站，点击右上角的Sign in进入页面再点击Sign up进行注册，如果已有Github账号可直接登录。注册的新账号注意要通过邮箱验证。<br>创建新项目, 如项目名称为blog,注意Initialize this repository with a README不要选中<br>请记住项目的git地址</p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2015/04/12/使用jacman主题搭建hexo博客/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/12/使用jacman主题搭建hexo博客/" data-id="cigso3a8p000pebs6x5a9wzmy" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/11/hello-world/" class="article-date">
+  <time datetime="2015-04-11T04:52:32.000Z" itemprop="datePublished">2015-04-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/11/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="http://hexo.io/">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html">Writing</a><br>
+        
+          <p class="article-more-link">
+            <a href="/2015/04/11/hello-world/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/11/hello-world/" data-id="cigsn6x9y0000x6s6k4ohsmsq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/kissy/">kissy</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mac/">mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/test/">test</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yosemite/">Yosemite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kissy/">kissy</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图标/">图标</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模块/">模块</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域/">跨域</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Yosemite/" style="font-size: 10px;">Yosemite</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/kissy/" style="font-size: 20px;">kissy</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/图标/" style="font-size: 10px;">图标</a> <a href="/tags/模块/" style="font-size: 16.67px;">模块</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">11</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/10/23/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/12/kissy最佳实践/">kissy最佳实践</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/03/event对象的clientX-offsetX-screenX-pageX区别/">event对象的clientX,offsetX,screenX,pageX区别</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/03/XMLHttpRequest-cannot-load-file-问题及解决/">XMLHttpRequest cannot load file 问题及解决</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/21/yosemite更改finder图标/">yosemite更改finder图标~</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

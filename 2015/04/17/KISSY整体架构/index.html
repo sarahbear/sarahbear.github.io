@@ -3,17 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015 | Hexo</title>
+  <title>KISSY整体架构 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2015/index.html">
+  <meta name="description" content="搬运自慕课网玩转KISSY框架
+##KISSY 整体架构Kissy是由三个部分组成的：Seed、Core、Components。
+###Seed
+Seed是种子，即上一节的seed-min.js，Seed的核心是Loader（即模块加载器），所有的功能模块或Ui组件都是在Seed上开花结果，早期的Loader遵循的是自创的KMD规范，现在遵循的是CMD规范 ，但在API上又有些差异，比如Kissy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KISSY整体架构">
+<meta property="og:url" content="http://yoursite.com/2015/04/17/KISSY整体架构/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description">
+<meta property="og:description" content="搬运自慕课网玩转KISSY框架
+##KISSY 整体架构Kissy是由三个部分组成的：Seed、Core、Components。
+###Seed
+Seed是种子，即上一节的seed-min.js，Seed的核心是Loader（即模块加载器），所有的功能模块或Ui组件都是在Seed上开花结果，早期的Loader遵循的是自创的KMD规范，现在遵循的是CMD规范 ，但在API上又有些差异，比如Kissy">
+<meta property="og:updated_time" content="2015-04-17T08:04:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description">
+<meta name="twitter:title" content="KISSY整体架构">
+<meta name="twitter:description" content="搬运自慕课网玩转KISSY框架
+##KISSY 整体架构Kissy是由三个部分组成的：Seed、Core、Components。
+###Seed
+Seed是种子，即上一节的seed-min.js，Seed的核心是Loader（即模块加载器），所有的功能模块或Ui组件都是在Seed上开花结果，早期的Loader遵循的是自创的KMD规范，现在遵循的是CMD规范 ，但在API上又有些差异，比如Kissy">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,210 +69,78 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/10/23/test/" class="archive-article-date">
-  <time datetime="2015-10-23T12:43:51.000Z" itemprop="datePublished">Oct 23</time>
+        <section id="main"><article id="post-KISSY整体架构" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/17/KISSY整体架构/" class="article-date">
+  <time datetime="2015-04-17T08:01:08.000Z" itemprop="datePublished">2015-04-17</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/kissy/">kissy</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/10/23/test/">test</a>
+    <h1 class="article-title" itemprop="name">
+      KISSY整体架构
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/05/12/kissy最佳实践/" class="archive-article-date">
-  <time datetime="2015-05-12T13:23:01.000Z" itemprop="datePublished">May 12</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/05/12/kissy最佳实践/">kissy最佳实践</a>
-    </h1>
-  
+        <p>搬运自慕课网<a href="http://www.imooc.com/learn/191" target="_blank" rel="external">玩转KISSY框架</a></p>
+<p>##KISSY 整体架构<br>Kissy是由三个部分组成的：Seed、Core、Components。</p>
+<p>###Seed</p>
+<p>Seed是种子，即上一节的seed-min.js，Seed的核心是Loader（即模块加载器），所有的功能模块或Ui组件都是在Seed上开花结果，早期的Loader遵循的是自创的KMD规范，现在遵循的是<a href="https://github.com/seajs/seajs/issues/242" target="_blank" rel="external">CMD规范</a> ，但在API上又有些差异，比如Kissy模块定义方法不叫 define ，模块定义方法包裹是比较讨厌的地方，看着不爽，后面明河会介绍写出来的代码如何近似于 NodeJs 模块代码风格。<br><a id="more"></a><br>Loader会是系列教程讲解的核心，掌握了Loader，相当于已经推开了Kissy的门，后面处处是风景。</p>
+<p>Seed还包含lang（工具模块，比如判断变量是否是数组等）、ua（终端判断，写hack和移动终端判断逻辑会用到），这二个部分非常简单，翻翻API就可理解。</p>
+<p>###Core</p>
+<p>Core包含Kissy的核心功能模块，比如非常常用的node（DOM操作）、io（ajax请求）、event（事件操作）、base（基类）等，很多功能模块的api非常像Jquery，熟悉Jquery的同学，上手毫无压力。</p>
+<p>比较难且重要的模块是base与promise，base作为基类，在抽象出组件或通用方法时，非常有用，也是Kissy组件风格的本源，必须掌握。</p>
+<p>promise是promise规范的实现，异步编程优化的优秀工具，已经融入到io操作中，所以也非常重要。</p>
+<p>###Components</p>
+<p>Kissy坐拥非常丰富的组件，当然跟Jquery数以万计的插件数量上市没的比，但日常开发常用的组件基本上都有，比如选项卡、日期选择、异步上传、图表、表单校验、弹出层、编辑器等。</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/05/03/event对象的clientX-offsetX-screenX-pageX区别/" class="archive-article-date">
-  <time datetime="2015-05-03T05:38:19.000Z" itemprop="datePublished">May 3</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/05/03/event对象的clientX-offsetX-screenX-pageX区别/">event对象的clientX,offsetX,screenX,pageX区别</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/05/03/XMLHttpRequest-cannot-load-file-问题及解决/" class="archive-article-date">
-  <time datetime="2015-05-03T04:04:33.000Z" itemprop="datePublished">May 3</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/17/KISSY整体架构/" data-id="cigso3a7g0000ebs6kj9aktq5" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/05/03/XMLHttpRequest-cannot-load-file-问题及解决/">XMLHttpRequest cannot load file 问题及解决</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/21/yosemite更改finder图标/" class="archive-article-date">
-  <time datetime="2015-04-21T02:13:44.000Z" itemprop="datePublished">Apr 21</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/21/yosemite更改finder图标/">yosemite更改finder图标~</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/kissy/">kissy</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/20/加载模块css文件/" class="archive-article-date">
-  <time datetime="2015-04-20T02:08:06.000Z" itemprop="datePublished">Apr 20</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/20/加载模块css文件/">加载模块css文件</a>
-    </h1>
+    <a href="/2015/04/17/模块系统/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          模块系统
+        
+      </div>
+    </a>
   
+  
+    <a href="/2015/04/16/动手玩kissy/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">动手玩kissy</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/20/包配置/" class="archive-article-date">
-  <time datetime="2015-04-20T01:24:45.000Z" itemprop="datePublished">Apr 20</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/20/包配置/">包配置</a>
-    </h1>
-  
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/18/Kissy模块规范/" class="archive-article-date">
-  <time datetime="2015-04-18T12:24:29.000Z" itemprop="datePublished">Apr 18</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/18/Kissy模块规范/">Kissy模块规范</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/18/一个模块一个js文件/" class="archive-article-date">
-  <time datetime="2015-04-18T12:18:02.000Z" itemprop="datePublished">Apr 18</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/18/一个模块一个js文件/">一个模块一个js文件</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/04/17/模块系统/" class="archive-article-date">
-  <time datetime="2015-04-17T08:50:07.000Z" itemprop="datePublished">Apr 17</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/04/17/模块系统/">模块系统</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 </section>
         
           <aside id="sidebar">

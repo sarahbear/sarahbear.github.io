@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>模块系统 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="搬运自慕课网玩转KISSY框架
+##什么是模块系统
+###CommonJS、AMD、CMD
+CommonJS、AMD、CMD 三者的关系和区别，是前端经典的面试题目哦。
+CommonJS是非常广泛的规范，包含了大量的内容，不止局限在浏览器端（比如Node.js），AMD、CMD都是其模块系统部分的子集，在CommonJS的wiki中找到践行CommonJS的javascript框架。CommonJ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模块系统">
+<meta property="og:url" content="http://yoursite.com/2015/04/17/模块系统/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="搬运自慕课网玩转KISSY框架
+##什么是模块系统
+###CommonJS、AMD、CMD
+CommonJS、AMD、CMD 三者的关系和区别，是前端经典的面试题目哦。
+CommonJS是非常广泛的规范，包含了大量的内容，不止局限在浏览器端（比如Node.js），AMD、CMD都是其模块系统部分的子集，在CommonJS的wiki中找到践行CommonJS的javascript框架。CommonJ">
+<meta property="og:updated_time" content="2015-04-17T09:00:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="模块系统">
+<meta name="twitter:description" content="搬运自慕课网玩转KISSY框架
+##什么是模块系统
+###CommonJS、AMD、CMD
+CommonJS、AMD、CMD 三者的关系和区别，是前端经典的面试题目哦。
+CommonJS是非常广泛的规范，包含了大量的内容，不止局限在浏览器端（比如Node.js），AMD、CMD都是其模块系统部分的子集，在CommonJS的wiki中找到践行CommonJS的javascript框架。CommonJ">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-模块系统" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/17/模块系统/" class="article-date">
+  <time datetime="2015-04-17T08:50:07.000Z" itemprop="datePublished">2015-04-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/kissy/">kissy</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      模块系统
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>搬运自慕课网<a href="http://www.imooc.com/learn/191" target="_blank" rel="external">玩转KISSY框架</a></p>
+<p>##什么是模块系统</p>
+<p>###CommonJS、AMD、CMD</p>
+<p>CommonJS、AMD、CMD 三者的关系和区别，是前端经典的面试题目哦。</p>
+<p>CommonJS是非常广泛的规范，包含了大量的内容，不止局限在浏览器端（比如Node.js），AMD、CMD都是其模块系统部分的子集，在CommonJS的wiki中找到践行CommonJS的javascript框架。<br>CommonJS 一个模块的代码 test.js：</p>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $ = require(<span class="string">'jquery'</span>);</span><br><span class="line"><span class="keyword">exports</span>.test = <span class="function"><span class="keyword">function</span> <span class="params">()</span> <span class="comment">&#123;&#125;</span>;</span></span><br></pre></td></tr></table></figure>
+<p>将 test 方法暴露给外部使用。<br><a id="more"></a><br>上面的代码明显没办法直接在浏览器端运行，所以就有了AMD 模块系统规范，可以保证模块文件可以在浏览器端正常执行。</p>
+<p>RequireJS 就是AMD 模块系统规范的实现者:</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">define([<span class="string">'jquery'</span>] , <span class="function"><span class="keyword">function</span> <span class="params">($)</span> </span>&#123; </span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;&#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>除了 AMD 还有 CDM 模块系统规范，SeaJs是其实现者：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params">require, exports</span>) </span>&#123; </span><br><span class="line">    <span class="comment">// 获取模块 a 的接口</span></span><br><span class="line">    <span class="keyword">var</span> a = <span class="built_in">require</span>(<span class="string">'jquery'</span>);</span><br><span class="line">    exports.test = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>相对于AMD，个人更推崇CMD规范，写法风格上更接近 CommonJS ，更接近 NodeJs 的写法。</p>
+<p>###KISSY的模块系统</p>
+<p>KISSY的模块系统遵循的是KMD规范：</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">KISSY.add(<span class="function"><span class="keyword">function</span><span class="params">(S,Node)</span></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $ = Node.all;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;&#125;;</span><br><span class="line">&#125;,&#123;requires:[<span class="string">"node"</span>]&#125;);</span><br></pre></td></tr></table></figure>
+<p>模块使用KISSY.add()包裹，现在已经不推荐使用该风格（Kissy文档和gallery存在大量KMD写法的代码，请无视），Kissy已经支持commonjs的风格：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">KISSY.add(<span class="function"><span class="keyword">function</span>(<span class="params">S,require,exports,module</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $ = <span class="built_in">require</span>(<span class="string">'node'</span>);</span><br><span class="line">    exports.test = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/17/模块系统/" data-id="cigso3a8e0009ebs6ww0o80tq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/kissy/">kissy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/模块/">模块</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/04/18/一个模块一个js文件/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          一个模块一个js文件
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/04/17/KISSY整体架构/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">KISSY整体架构</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/js/">js</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/kissy/">kissy</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mac/">mac</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/test/">test</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yosemite/">Yosemite</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kissy/">kissy</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/test/">test</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图标/">图标</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模块/">模块</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域/">跨域</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Yosemite/" style="font-size: 10px;">Yosemite</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/kissy/" style="font-size: 20px;">kissy</a> <a href="/tags/test/" style="font-size: 10px;">test</a> <a href="/tags/图标/" style="font-size: 10px;">图标</a> <a href="/tags/模块/" style="font-size: 16.67px;">模块</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">11</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/10/23/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/12/kissy最佳实践/">kissy最佳实践</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/03/event对象的clientX-offsetX-screenX-pageX区别/">event对象的clientX,offsetX,screenX,pageX区别</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/03/XMLHttpRequest-cannot-load-file-问题及解决/">XMLHttpRequest cannot load file 问题及解决</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/21/yosemite更改finder图标/">yosemite更改finder图标~</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
