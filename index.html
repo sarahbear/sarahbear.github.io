@@ -3,16 +3,18 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>测试子页面信息</title>
   <script type="text/JavaScript">
-      //event 参数中有 data 属性，就是父窗口发送过来的数据
-      window.addEventListener("message", function( event ) {
-          // 把父窗口发送过来的数据显示在子窗口中
-        document.getElementById("content").innerHTML+=event.data+"<br/>";
-      }, false );
-
-  </script>
+        function sendIt() {
+            // 子页面给父页面传输信息 
+            parent.postMessage(
+                document.getElementById("message").value,
+                "10.212.31.235:3000"
+            );
+        }
+    </script>
   </head>
   <body>
-    测试子页面信息
-      <div id="content"></div>
+    测试子页面给父页面传输信息 
+<input type="text" id="message"/>
+<input type="button" value="Send to child.com" onclick="sendIt()"/>
   </body>
   </html>
