@@ -10,11 +10,19 @@
                 "http://10.212.31.235:3000"
             );
         }
+    function muteIt() {
+      var iframe = document.getElementsByTagName('iframe')[0];
+      iframe.contentWindow.postMessage('{"method":"setVolume", "value":1}', '*');
+    }
+    
+  });
     </script>
   </head>
   <body>
+    <iframe src="https://rawgit.com/ufologist/50b4f2768126089c3e11/raw/9a7688a2bac7b556d9998a89a2b972b09fd4263b/fake-autoplay-audio-ios-safari.html?api=1;title=0&amp;byline=0&amp;portrait=0&amp;color=d01e2f&amp;autoplay=1" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 <audio id="bgmusic" autoplay="" preload="" loop="" controls="" src="http://www.w3school.com.cn/i/song.mp3"></audio>
     测试子页面给父页面传输信息 
+    <button onclick="muteIt()">Mute</button>
 <input type="text" id="message"/>
 <input type="button" value="Send to child.com" onclick="sendIt()"/>
   </body>
